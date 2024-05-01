@@ -1,1 +1,0 @@
-/home/ilja/ownCloud/Studium/Semester_8/Programmierung/Programmierung-rust/hello_world/target/debug/hello_world: /home/ilja/ownCloud/Studium/Semester_8/Programmierung/Programmierung-rust/hello_world/src/main.rs
