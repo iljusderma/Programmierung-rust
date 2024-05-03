@@ -1,0 +1,1 @@
+/home/ilja/ownCloud/Studium/Semester_8/Programmierung/Programmierung-rust/exercise2/target/debug/exercise2: /home/ilja/ownCloud/Studium/Semester_8/Programmierung/Programmierung-rust/exercise2/src/main.rs

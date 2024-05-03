@@ -1,4 +1,4 @@
-use std::io;
+ use std::io;
 
 fn get_non_alphabets(string: &str) -> (Vec<usize>, Vec<usize>){
     let mut spaces = vec![0]; // includes the postion of the first letter (first word)
@@ -15,12 +15,17 @@ fn get_non_alphabets(string: &str) -> (Vec<usize>, Vec<usize>){
     (spaces, n_alph)
 } 
 
-fn get_slices(string: &str, spaces: Vec<usize>) -> Vec<&str> {
+fn get_slices(string: &str, mut spaces: Vec<usize>) -> Vec<&str> {
     let mut slices: Vec<&str> = vec![];
+    spaces.push(string.len());
     let len = spaces.len();
     for (i, &item) in spaces[..len-1].iter().enumerate() {
         println!("{i}");
-        slices.push(&string[item..item+1])
+        if i == 0 {
+            slices.push(&string[item..spaces[i+1]])
+        } else {
+            slices.push(&string[item+1..spaces[i+1]])
+        }
     }
     slices
 }
@@ -43,7 +48,5 @@ fn main() {
     let lpw: f64 = (charnum - spacenum - n_alphnum)/(spaces.len() as f64);
     println!("Letters per word: {}", lpw);
     let slices = get_slices(input, spaces);
-    for slice in slices {
-        println!("{}", slice)
-    }
+    println!("{:?}", slices)
 }
