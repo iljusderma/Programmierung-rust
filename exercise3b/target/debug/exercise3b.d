@@ -1,1 +1,1 @@
-/home/ilja/ownCloud/Studium/Semester_8/Programmierung/Programmierung-rust/exercise3b/target/debug/exercise3b: /home/ilja/ownCloud/Studium/Semester_8/Programmierung/Programmierung-rust/exercise3b/src/main.rs
+/home/ilja/Documents/coding/Programmierung-rust/exercise3b/target/debug/exercise3b: /home/ilja/Documents/coding/Programmierung-rust/exercise3b/src/main.rs

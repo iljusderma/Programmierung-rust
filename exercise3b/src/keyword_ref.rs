@@ -1,12 +1,13 @@
 fn main() {
-    let lecture = Some("INF-B-240".to_string());
-
-    // Your implementation follows here
-    // ...
-
-    // Print the final sentence
+    let lecture: Option<String> = Some("INF-B-240".to_string());
+    println!("Adress of lecture (before): {:p}", &lecture);
+    match lecture {
+        Some(ref i) => println!("{}", i),
+        _ => println!("None")
+    }
+    println!("Adress of lecture (after): {:p}", &lecture);
     println!(
         "I'm attending the module {}",
         lecture.unwrap_or("programming".into())
-    );
+    )
 }
