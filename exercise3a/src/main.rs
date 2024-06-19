@@ -1,4 +1,3 @@
-use std::fmt::write;
 use std::fs::File;
 use std::io::BufReader;
 use std::io::BufWriter;
@@ -103,7 +102,7 @@ fn read_file() -> Result<Library, Box<dyn Error>> {
 fn write_file(library:&Library) -> Result<(), Box<dyn Error>>{
     let file = File::create("edited_library.json").unwrap();
     let mut buf_writer = BufWriter::new(file);
-    serde_json::to_writer_pretty(&mut buf_writer, library);
+    let _ = serde_json::to_writer_pretty(&mut buf_writer, library);
     Ok(())
 }
 
@@ -126,5 +125,5 @@ fn main() {
     library.add_item(Item::Book(book));
     library.add_item(Item::Newspaper(newspaper));
     library.add_item(Item::Movie(movie));
-    write_file(&library);
+    let _ = write_file(&library);
 }
