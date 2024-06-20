@@ -4,8 +4,8 @@ use crate::read_string;
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Newspaper {
-    pub title: String,
-    date: String,
+    pub(crate) title: String,
+    pub(crate) date: String,
 }
 
 // Implementation block for type Newspaper

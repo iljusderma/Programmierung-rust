@@ -1,13 +1,18 @@
-mod book;
+mod old;
+mod new;
 mod person;
-mod newspaper;
-mod movie;
 
 use serde::{Serialize, Deserialize};
 
-use crate::library::book::Book;
-pub use crate::library::newspaper::Newspaper as TNewspaper;
-use crate::library::movie::Movie;
+// import old item types
+use crate::library::old::book::Book as BookOld;
+pub use crate::library::old::newspaper::Newspaper as NewspaperOld;
+use crate::library::old::movie::Movie as MovieOld;
+
+// import new item types
+use crate::library::new::book::Book as Book;
+use crate::library::new::newspaper::Newspaper as Newspaper;
+use crate::library::new::movie::Movie as Movie;
 
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -16,13 +21,23 @@ pub struct Library {
      pub items: Vec<Item>,
 }
 
+pub struct LibraryOld {
+    pub items: Vec<ItemOld>
+}
+
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 #[serde(tag = "type")]
 pub enum Item {
     Book(Book),
-    Newspaper(TNewspaper),
+    Newspaper(Newspaper),
     Movie(Movie),
+}
+
+pub enum ItemOld {
+    BookOld(BookOld),
+    NewspaperOld(NewspaperOld),
+    MovieOld(MovieOld)
 }
 
 
@@ -70,6 +85,30 @@ impl Library {
         .filter(|item| item.get_title() == &title)
         .map(|item| println!("{:?}", item))
         .last();
+    }
+
+    pub fn convert(library_old: LibraryOld) -> Library{
+        let mut library_new = Library{ items: Vec::new()};
+        for item in library_old.items{
+            let _ = match item{
+                ItemOld::BookOld(BookOld {
+                    title,
+                    year,
+                    isbn,
+                    authors,
+                }) => library_new.add(Item::Book(Book::new(title, year, isbn, authors))),
+                ItemOld::NewspaperOld(NewspaperOld {
+                    title,
+                    date
+                }) => library_new.add(Item::Newspaper(Newspaper::new(title, date))),
+                ItemOld::MovieOld(MovieOld {
+                    title,
+                    year,
+                    director
+                }) => library_new.add(Item::Movie(Movie::new(title, year, director))),
+            }
+        }
+        library_new
     }
 }
 

@@ -7,7 +7,7 @@ use std::fs::File;
 use std::io::{stdin, BufReader, BufWriter, Write};
 
 // include modules
-use crate::library::{Library, Item, TNewspaper};
+use crate::library::{Library, Item, NewspaperOld};
 
 // Reading and parsing library file
 // We ignore the syntax on "Box<dyn Error>>"
@@ -51,7 +51,7 @@ fn main() {
                 let subtype = read_string();
                 match subtype.as_str() {
                     "n" => {
-                        library.add(Item::Newspaper(TNewspaper::create()));
+                        library.add(Item::Newspaper(NewspaperOld::create()));
                     }
                     other => {
                         println!("Create not implemented for subtype '{other}' yet or invalid")

@@ -4,10 +4,10 @@ use crate::library::person::Person;
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Book {
-    pub title: String,
-    year: u32,
-    isbn: String,
-    authors: Vec<Person>,
+    pub(crate) title: String,
+    pub(crate) year: u32,
+    pub(crate) isbn: String,
+    pub(crate) authors: Vec<Person>,
 }
 
 // Implementation block for type Book

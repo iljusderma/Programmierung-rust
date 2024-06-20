@@ -1,17 +1,21 @@
 use serde::{Serialize, Deserialize};
-use crate::library::person::Person;
+use uuid::Uuid;
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Movie {
+    id: Uuid,
     pub title: String,
     year: u32,
-    director: Person
+    director: Uuid
 }
 
 // Implementation block for type Movie 
 impl Movie {
-    fn new(title: String, year: u32, director: Person) -> Self {
-        Self { title, year , director}
+    pub fn new(title: String, year: u32, director: Uuid) -> Self {
+        Self {id:Uuid::new_v4(), 
+            title, 
+            year , 
+            director}
     }
 }
