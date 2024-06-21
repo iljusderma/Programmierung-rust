@@ -1,147 +1,155 @@
 {
+  "persons": {
+    "a0ca4880-4da6-4bd0-ac61-459e7cfc0249": {
+      "name": "Steve Klabnik",
+      "birthYear": null
+    },
+    "8c875675-d87e-46d6-bcf0-3ccd155750fc": {
+      "name": "Roland Emmerich",
+      "birthYear": 1955
+    },
+    "f363a9a8-7e9a-4872-a604-38823f8ccbf7": {
+      "name": "Terry Jones",
+      "birthYear": 1942
+    },
+    "fb13d368-0bdc-4cff-a4a5-08a454fda060": {
+      "name": "Carol Nichols",
+      "birthYear": null
+    },
+    "06583abe-ac38-49f2-8fbc-25ce7d7a8a22": {
+      "name": "Dan Brown",
+      "birthYear": 1964
+    },
+    "32f6f4d2-bd56-4db5-8d48-dce0798e6982": {
+      "name": "Ron Howard",
+      "birthYear": 1954
+    },
+    "ea241f2f-6aa5-4d56-9a38-913251f74ab4": {
+      "name": "Garth Jennings",
+      "birthYear": 1972
+    }
+  },
   "items": [
     {
       "type": "book",
+      "id": "89efcae0-3091-4a4b-9687-a5ae2124cbd7",
       "title": "Angels & Demons",
       "year": 2000,
       "isbn": "9780593055045",
       "authors": [
-        {
-          "name": "Dan Brown",
-          "birthYear": 1964
-        }
+        "06583abe-ac38-49f2-8fbc-25ce7d7a8a22"
       ]
     },
     {
       "type": "book",
+      "id": "3ffeafb8-15da-4320-a5a6-8a54d9b93149",
       "title": "The Da Vinci Code",
       "year": 2003,
       "isbn": "9780307474278",
       "authors": [
-        {
-          "name": "Dan Brown",
-          "birthYear": 1964
-        }
+        "06583abe-ac38-49f2-8fbc-25ce7d7a8a22"
       ]
     },
     {
       "type": "book",
+      "id": "c6391bf7-9969-4279-9796-e809fc35b74c",
       "title": "The Lost Symbol",
       "year": 2009,
       "isbn": "9780385504225",
       "authors": [
-        {
-          "name": "Dan Brown",
-          "birthYear": 1964
-        }
+        "06583abe-ac38-49f2-8fbc-25ce7d7a8a22"
       ]
     },
     {
       "type": "book",
+      "id": "0e4166a4-793a-4f79-a86b-1a2d70558e5b",
       "title": "Inferno",
       "year": 2013,
       "isbn": "9780385537858",
       "authors": [
-        {
-          "name": "Dan Brown",
-          "birthYear": 1964
-        }
+        "06583abe-ac38-49f2-8fbc-25ce7d7a8a22"
       ]
     },
     {
       "type": "book",
+      "id": "6fe49ac5-b6bf-476f-bf38-d9120b48994f",
       "title": "Origin",
       "year": 2017,
       "isbn": "9780593078754",
       "authors": [
-        {
-          "name": "Dan Brown",
-          "birthYear": 1964
-        }
+        "06583abe-ac38-49f2-8fbc-25ce7d7a8a22"
       ]
     },
     {
       "type": "book",
+      "id": "563e9bf8-3dec-4f2f-8ecd-2f9fad665a7a",
       "title": "The Rust Programming Language",
       "year": 2023,
       "isbn": "9781718503113",
       "authors": [
-        {
-          "name": "Steve Klabnik"
-        },
-        {
-          "name": "Carol Nichols"
-        }
+        "a0ca4880-4da6-4bd0-ac61-459e7cfc0249",
+        "fb13d368-0bdc-4cff-a4a5-08a454fda060"
       ]
     },
     {
       "type": "newspaper",
+      "id": "7fc45f9b-bb19-4d3b-bdae-a6fb442c3c4d",
       "title": "Süddeutsche Zeitung",
       "date": "01.04.2002"
     },
     {
       "type": "newspaper",
+      "id": "5caed30a-b5ef-4936-a028-bd87331c7452",
       "title": "Süddeutsche Zeitung",
       "date": "02.04.2002"
     },
     {
       "type": "newspaper",
+      "id": "d6cda71c-17b8-406d-92fd-db8ab9cb6cf3",
       "title": "Süddeutsche Zeitung",
       "date": "03.04.2002"
     },
     {
       "type": "movie",
+      "id": "9ac62e7f-45a8-47b9-ad5d-ee1d5f126c26",
       "title": "The Da Vinci Code",
       "year": 2006,
-      "director": {
-        "name": "Ron Howard",
-        "birthYear": 1954
-      }
+      "director": "32f6f4d2-bd56-4db5-8d48-dce0798e6982"
     },
     {
       "type": "movie",
+      "id": "c3217313-9faa-4862-867b-b4e40536fe55",
       "title": "Angels & Demons",
       "year": 2009,
-      "director": {
-        "name": "Ron Howard",
-        "birthYear": 1954
-      }
+      "director": "32f6f4d2-bd56-4db5-8d48-dce0798e6982"
     },
     {
       "type": "movie",
+      "id": "86616b48-4d36-4af2-a3df-151db7ca2181",
       "title": "Inferno",
       "year": 2016,
-      "director": {
-        "name": "Ron Howard",
-        "birthYear": 1954
-      }
+      "director": "32f6f4d2-bd56-4db5-8d48-dce0798e6982"
     },
     {
       "type": "movie",
+      "id": "fcfe35ea-a62e-4270-b53e-689bcf4ea9f2",
       "title": "The Hitchhiker's Guide to the Galaxy",
       "year": 2005,
-      "director": {
-        "name": "Garth Jennings",
-        "birthYear": 1972
-      }
+      "director": "ea241f2f-6aa5-4d56-9a38-913251f74ab4"
     },
     {
       "type": "movie",
+      "id": "2d8a20b0-b984-4e00-ae27-fe5487537394",
       "title": "The Day After Tomorrow",
       "year": 2004,
-      "director": {
-        "name": "Roland Emmerich",
-        "birthYear": 1955
-      }
+      "director": "8c875675-d87e-46d6-bcf0-3ccd155750fc"
     },
     {
       "type": "movie",
+      "id": "a5ef9c88-b356-4bbe-9b21-a3d00cd20f6d",
       "title": "Monty Python's Life of Brian",
       "year": 1979,
-      "director": {
-        "name": "Terry Jones",
-        "birthYear": 1942
-      }
+      "director": "f363a9a8-7e9a-4872-a604-38823f8ccbf7"
     }
   ]
 }

@@ -6,15 +6,17 @@ use std::error::Error;
 use std::fs::File;
 use std::io::{stdin, BufReader, BufWriter, Write};
 
+use library::LibraryOld;
+
 // include modules
-use crate::library::{Library, Item, NewspaperOld};
+use crate::library::{convert, Library, Item, Newspaper};
 
 // Reading and parsing library file
 // We ignore the syntax on "Box<dyn Error>>"
-fn read_library_file() -> Result<Library, Box<dyn Error>> {
+fn read_library_file() -> Result<LibraryOld, Box<dyn Error>> {
     let library_file = File::open("library.json")?;
     let reader = BufReader::new(library_file);
-    let library = serde_json::from_reader::<BufReader<File>, Library>(reader)?;
+    let library = serde_json::from_reader::<BufReader<File>, LibraryOld>(reader)?;
     Ok(library)
 }
 
@@ -31,10 +33,12 @@ fn write_library_file(library: &Library) -> Result<(), Box<dyn Error>> {
 
 fn main() {
     // First step: Load file into custom type "Library"
-    let mut library = match read_library_file() {
+    let library_old = match read_library_file() {
         Ok(library) => library,
         Err(e) => panic!("{:?}", e),
     };
+
+    let mut library = convert(library_old);
 
     // Logic loop
     loop {
@@ -51,7 +55,7 @@ fn main() {
                 let subtype = read_string();
                 match subtype.as_str() {
                     "n" => {
-                        library.add(Item::Newspaper(NewspaperOld::create()));
+                        library.add(Item::Newspaper(Newspaper::create()));
                     }
                     other => {
                         println!("Create not implemented for subtype '{other}' yet or invalid")
@@ -79,7 +83,7 @@ fn main() {
                 library.sort_by_title();
             }
             "w" => {
-                println!("Write changes.");
+                println!("Wrote changes.");
                 if let Err(e) = write_library_file(&library) {
                     panic!("{:?}", e);
                 }

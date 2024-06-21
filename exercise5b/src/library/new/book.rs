@@ -8,7 +8,7 @@ pub struct Book {
     pub title: String,
     year: u32,
     isbn: String,
-    authors: Vec<Uuid>,
+    pub authors: Vec<Uuid>,
 }
 
 // Implementation block for type Book
