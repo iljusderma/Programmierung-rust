@@ -1,3 +1,4 @@
 # Generated files
-/*/target
+/*/target/
 /*/Cargo.lock
+/*/target/.*
