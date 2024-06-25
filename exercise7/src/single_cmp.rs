@@ -1,6 +1,5 @@
 use std::cmp::Ordering;
 
-// TODO: Write your implementation for "min" and "max" working with single values
 fn min<T: std::cmp::Ord>(a: T, b: T) -> T {
     match a.cmp(&b){
         Ordering::Greater | Ordering::Equal => b,
